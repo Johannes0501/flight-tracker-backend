@@ -22,7 +22,7 @@ app.get('/api/flights', async (req, res) => {
     const lomax = 40.0;
     
     const response = await axios.get(
-      https://opensky-network.org/api/states/all?lamin={lamin}&lomin={lomin}&lamax={lamax}&lomax={lomax}
+      `https://opensky-network.org/api/states/all?lamin=${lamin}&lomin=${lomin}&lamax=${lamax}&lomax=${lomax}`
     );
     
     const flights = response.data.states.map(state => ({
@@ -63,5 +63,5 @@ app.get('/api/flights', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(Server listening at http://localhost:{port});
+  console.log(`Server listening at http://localhost:${port}`);
 });
